@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<p></p>
+	<div id="father">
+		<div>
+			<span>span1</span>
+			<span>span2</span>
+			<span>span3</span>
+		</div>
+		<div>
+			<b>1</b>
+			<div>div1</div>
+			<div>div2</div>
+			<div>div3</div>
+			<p></p>
+		</div>
+		<div></div>
+		<p></p>
+		<p></p>
+		<p></p>
+		<span>sss1</span>
+	</div>
+</body>
+
+</html>
+
+<script src="./jquery-3.6.3.js"></script>
+<script>
+	$(function () {
+		// 获取id为father这个元素的所有子div
+		console.log($("#father > div"));
+
+		// 获取id为father这个元素的所有子div以及所有子p
+		console.log($("#father > div,p")); // 不行，它表示获取id为father元素的所有子div，以及整个页面上所有的p
+		console.log($("#father > div, #father > p")); // 6个
+
+		// 获取id为father这个元素的所有后代div
+		console.log($("#father div")); // 6个
+	})
+</script>
